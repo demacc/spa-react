@@ -29,7 +29,7 @@ function App() {
       <Navbar setModal={setModal} />
       <PostList posts={posts} />
       {showModal && (
-        <Modal>
+        <Modal danger>
           <h1>Zoom class is avilable</h1>
           <p>
             fee free for <a href="">join</a> here
