@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
 
-export default function PostFrom() {
+export default function PostFrom({ addPost }) {
   let [postChg, setpostChg] = useState("");
   //   let changes = (e) => {
   //     setpostChg(e.target.value);
@@ -9,10 +9,26 @@ export default function PostFrom() {
 
   let restPost = () => {
     setpostChg("");
-    console.log("hit");
   };
+
+  let upload = (e) => {
+    e.preventDefault();
+
+    // {
+    //     title: "Post Three",
+    //     id: 3,
+    //   },
+
+    let uploadPost = {
+      title: postChg,
+      id: Math.floor(Math.random() * 1000),
+    };
+    restPost();
+    addPost(uploadPost);
+  };
+
   return (
-    <form className="form-container">
+    <form className="form-container" onSubmit={upload}>
       <div className="post-form">
         <label htmlFor="">Title</label>
         <input
@@ -21,12 +37,8 @@ export default function PostFrom() {
           value={postChg}
         />
       </div>
-      <p>{postChg}</p>
       <div className="post-form">
-        <button type="button" onClick={restPost}>
-          rest form
-        </button>
-        <button>Post Now</button>
+        <button type="submit">Post Now</button>
       </div>
     </form>
   );
