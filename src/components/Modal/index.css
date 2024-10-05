@@ -18,3 +18,10 @@
 .modal h1{
     margin: 20px;
 }
+
+.modal-backdrop .border-red {
+    border: 2px solid red;
+}
+.modal-backdrop .border-blue {
+    border: 2px solid blue;
+}
