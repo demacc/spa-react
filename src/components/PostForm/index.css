@@ -1,0 +1,19 @@
+.form-container .post-form {
+    margin: 20px;
+}
+
+.form-container label {
+    margin-right: 20px;
+}
+
+.form-container input {
+    border: 2px solid gray;
+    padding: 5px;
+    border-radius: 3px;
+}
+.form-container button {
+    border : 1px solid gray;
+    background-color: indianred;
+    padding: 10px;
+    
+}

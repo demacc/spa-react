@@ -3,12 +3,11 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import PostList from "./components/PostList";
 import Modal from "./components/Modal";
+import PostFrom from "./components/PostForm";
 
 function App() {
   let [showModal, setModal] = useState(false);
-  let colseModal = () => {
-    setModal(false);
-  };
+
   let [posts, setPosts] = useState([
     {
       title: "Post One",
@@ -29,22 +28,10 @@ function App() {
       <Navbar setModal={setModal} />
       <PostList posts={posts} />
       {showModal && (
-        <Modal>
-          <h1>Zoom class is avilable</h1>
-          <p>
-            fee free for <a href="">join</a> here
-          </p>
-          <button onClick={colseModal}>Close backdrop</button>
+        <Modal setModal={setModal}>
+          <PostFrom />
         </Modal>
       )}
-      {/* <Modal>
-        <h1>Term and condition</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
-          quibusdam fuga? Qui repellat sapiente, dignissimos nihil tempore ea
-          natus voluptate.
-        </p>
-      </Modal> */}
     </>
   );
 }

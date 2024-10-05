@@ -12,7 +12,7 @@ export default function Navbar({ setModal }) {
         <ul>
           <li>Home</li>
           <li>About</li>
-          <li onClick={modalShow}>Sign In</li>
+          <li onClick={modalShow}>Post Form</li>
         </ul>
       </div>
     </nav>
