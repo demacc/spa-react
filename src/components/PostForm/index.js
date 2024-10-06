@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./index.css";
 
 export default function PostFrom({ addPost }) {
-  let [postChg, setpostChg] = useState("");
+  //let [postChg, setpostChg] = useState("");
   //   let changes = (e) => {
   //     setpostChg(e.target.value);
   //   };
-
+  let title = useRef();
   let restPost = () => {
-    setpostChg("");
+    title.current.value = "";
   };
 
   let upload = (e) => {
@@ -20,7 +20,7 @@ export default function PostFrom({ addPost }) {
     //   },
 
     let uploadPost = {
-      title: postChg,
+      title: title.current.value,
       id: Math.floor(Math.random() * 1000),
     };
     restPost();
@@ -33,8 +33,9 @@ export default function PostFrom({ addPost }) {
         <label htmlFor="">Title</label>
         <input
           type="text"
-          onChange={(e) => setpostChg(e.target.value)}
-          value={postChg}
+          // onChange={(e) => setpostChg(e.target.value)}
+          // value={postChg}
+          ref={title}
         />
       </div>
       <div className="post-form">
